@@ -7,6 +7,7 @@
     <p v-if="senha.length < 5 && senha.length > 0">Senha muito curta</p>
     <p v-else>Senha ok!</p>
     <p v-if="erro">{{ erro }}</p>
+    <p v-if="store.token">{{ store.token }}</p>
     <button @click="atualizar">Atualizar</button>
     <button @click="incluir">Incluir</button>
     <table>
@@ -30,6 +31,9 @@
 import { ref } from 'vue'
 import axios from 'axios'
 import { onMounted } from 'vue'
+import { loginStore } from '@/stores/login'
+
+const store = loginStore()
 
 const nome = ref<string>('')
 const senha = ref<string>('')

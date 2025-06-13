@@ -10,8 +10,7 @@ import router from './router'
 import axios from 'axios'
 import { loginStore } from './stores/login'
 
-axios.defaults.baseURL = 'https://supreme-disco-jp5v55p55w2p44p-8080.app.github.dev/'
-
+axios.defaults.baseURL = 'http://localhost:8080/'
 axios.interceptors.request.use((config) => {
   const store = loginStore()
   if (store.token) {

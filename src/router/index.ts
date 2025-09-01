@@ -29,6 +29,11 @@ const router = createRouter({
       name: 'login',
       component: () => import('../views/LoginView.vue'),
     },
+    {
+      path: '/preco',
+      name: 'preco',
+      component: () => import('../views/RemarqueView.vue'),
+    },
   ],
 })
 
